@@ -15,14 +15,21 @@ namespace javaish
 
 			Socket(std::string host, unsigned int port);
 
-			unsigned int read(char * buffer, unsigned int bufferSize);
+			~Socket();
+
+			unsigned int sRead(char * buffer, unsigned int bufferSize);
 			std::string readString();
 
 			std::string readString(unsigned int maxSize);
+
+			void sWrite(std::string message);
 		private:
 			int fileDescriptor;	
 			std::string host;
-			unsigned int port;		
+			unsigned int port;	
+			void nullBuffer(char * buffer, unsigned int size);	
+
+			const static size_t BufferSize;
 		};
 	}
 }

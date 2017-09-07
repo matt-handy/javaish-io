@@ -11,6 +11,8 @@ namespace javaish
 	class ServerSocket
 		{
 		public:
+			~ServerSocket();
+
 			ServerSocket(unsigned short port, unsigned int soTimeout);
 
 			Socket* acceptSocket();
